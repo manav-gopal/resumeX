@@ -1,0 +1,181 @@
+{
+  "basics": {
+    "name": "Harsh Sahu",
+    "label": "Frontend Developer",
+    "image": "https://res.cloudinary.com/dq6uhnvgl/image/upload/v1705300611/samples/smyr1ifpwismidktqew7.jpg",
+    "email": "harshsahu@email.com",
+    "phone": "+91 9876543210",
+    "url": "www.harshsahu-resume.com",
+    "summary": "I am a dedicated web developer with a strong expertise in frontend technologies and exposure to backend development. I design and develop web applications using cutting-edge technologies to ensure high-quality, efficient code delivery.",
+    "location": {
+      "city": "Bilaspur",
+      "countryCode": "IN"
+    },
+    "relExp": "6 years",
+    "totalExp": "8 years",
+    "objective": "Eager to expand my skill set through continual learning opportunities and contribute these skills to drive innovative and efficient solutions. Passionate about leveraging technology to enhance user experiences.",
+    "profiles": [
+      {
+        "network": "linkedin",
+        "username": "harshsahu",
+        "url": "https://www.linkedin.com/in/harshsahu/"
+      },
+      {
+        "network": "twitter",
+        "username": "harsh_sahu",
+        "url": "https://www.twitter.com/harsh_sahu/"
+      },
+      {
+        "network": "github",
+        "username": "harshdeveloper",
+        "url": "https://github.com/harshdeveloper/"
+      },
+      {
+        "network": "hackerrank",
+        "username": "harsh_cube",
+        "url": "https://www.hackerrank.com/harsh_cube/"
+      },
+      {
+        "network": "hackerearth",
+        "username": "harshsahu",
+        "url": "https://www.hackerearth.com/harshsahu/"
+      },
+      {
+        "network": "codechef",
+        "username": "harshdeveloper",
+        "url": "https://www.codechef.com/harshdeveloper/"
+      },
+      {
+        "network": "leetcode",
+        "username": "harsh_cube",
+        "url": "https://leetcode.com/harsh_cube/"
+      }
+    ]
+  },
+  "skills": {
+    "languages": [
+      { "name": "JavaScript", "level": 90 },
+      { "name": "HTML5", "level": 85 },
+      { "name": "CSS", "level": 85 }
+    ],
+    "frameworks": [
+      { "name": "React", "level": 80 },
+      { "name": "Angular", "level": 75 }
+    ],
+    "technologies": [
+      { "name": "Algorithms", "level": 3 },
+      { "name": "Progressive Web Apps", "level": 3 },
+      { "name": "SQL", "level": 3 },
+      { "name": "Data Structures", "level": 3 }
+    ],
+    "libraries": [
+      { "name": "jQuery", "level": 3 },
+      { "name": "Redux", "level": 3 }
+    ],
+    "databases": [{ "name": "Firebase", "level": 3 }],
+    "practices": [
+      { "name": "Component based architecture", "level": 3 },
+      { "name": "Agile methodology", "level": 3 },
+      { "name": "Design Patterns", "level": 3 },
+      { "name": "Test Driven Development", "level": 3 },
+      { "name": "MVC", "level": 3 }
+    ],
+    "tools": [
+      { "name": "Git", "level": 3 },
+      { "name": "VS Code", "level": 3 },
+      { "name": "Jira", "level": 3 },
+      { "name": "Webpack", "level": 3 },
+      { "name": "Eclipse", "level": 3 },
+      { "name": "Bitbucket", "level": 3 }
+    ]
+  },
+  "work": [
+    {
+      "id": "1",
+      "name": "Tech Solutions",
+      "position": "Lead Software Engineer",
+      "startDate": "Jul 2023",
+      "isWorkingHere": true,
+      "highlights": [
+        "* Leading a team of 7 developers to build efficient web applications",
+        "* Spearheading projects using React for improved user interactivity"
+      ],
+      "summary": "<ul><li> Utilizing extensive experience in frontend development to architect and build scalable project structures</li><li>Ensuring code quality by leading code reviews and proposing enhancements</li><li> Collaborating with designers to materialize design concepts into functional interfaces</li><li>Contributing to E-commerce advancements with Fastcommerce, a leading e-commerce platform</li></ul>",
+      "years": ""
+    },
+    {
+      "id": "2",
+      "name": "Innovate Tech",
+      "position": "Software Engineer",
+      "startDate": "Jun 2022",
+      "endDate": "Dec 2023",
+      "highlights": [
+        "* Developed web applications using Sharepoint, Drupal 8, and Episerver"
+      ],
+      "summary": "<ul><li>Developed web applications using Sharepoint, Drupal 8, and Episerver</li><li>Managed a team of 8 developers, providing technical support and clarifications</li><li>Reported project progress to Project Managers and IT Leads, ensuring alignment with requirements</li><li>Ensured compliance of code and features with project requirements</li></ul>",
+      "years": "1 years"
+    },
+    {
+      "id": "3",
+      "name": "Digital Innovations",
+      "position": "Trainee Developer",
+      "startDate": "Aug 2020",
+      "endDate": "May 2022",
+      "highlights": [
+        "* Worked on web application development for small companies"
+      ],
+      "summary": "<ul><li>Designed user-friendly interfaces for digital platforms of small companies</li><li>Developed Wordpress themes, plugins, and provided training</li><li>Managed Magento e-commerce platforms, customizing preexisting themes and integrating external services</li></ul>",
+      "years": "4 years"
+    }
+  ],
+
+  "education": [
+    {
+      "id": "1",
+      "institution": "JKIE Bilspur",
+      "url": "https://www.jkedugroup.in/",
+      "studyType": "B.Tech",
+      "area": "Computer Science",
+      "startDate": "2020",
+      "endDate": "2024",
+      "score": "CGPA: 8.6",
+      "courses": []
+    }
+  ],
+
+  "activities": {
+    "involvements": "<ul><li>Initiated tests that revealed bugs in new shopping cart software, preventing sales tax undercharges worth millions</li><li>Discovered flaws in price checking tools, increasing competitiveness and revenue by 20%</li><li>Implemented automated testing tools for regression, negative testing, and usability improvements</li></ul>",
+
+    "achievements": "<ul><li>Completed 'React and Redux - A Complete Guide 2020' from Udemy</li><li>Obtained Agile and Scrum Master Certificate from Udacity</li><li>Recognized as 'Best Performer' for consistent high-performance</li><li>Certificate of 'Exceptional Bug Finder' by XYZ client</li></ul>"
+  },
+
+  "volunteer": [
+    {
+      "id": "1",
+      "organization": "Community Connect",
+      "position": "Event Coordinator",
+      "url": "https://www.communityconnect.com/",
+      "startDate": "2021-01-01",
+      "endDate": "2022-01-01",
+      "summary": "Organized hackathons and meetups to foster community growth",
+      "highlights": ["Awarded 'Volunteer of the Year'"],
+      "isVolunteeringNow": false
+    }
+  ],
+  "awards": [
+    {
+      "title": "Innovator of the Year Award",
+      "date": "2022-11-01",
+      "awarder": "Innovation Hub",
+      "summary": "Recognized for outstanding contributions to innovation",
+      "id": "1"
+    },
+    {
+      "title": "Tech Enthusiast Award",
+      "date": "2023-11-01",
+      "awarder": "Tech Giants Association",
+      "summary": "Acknowledged for passion and enthusiasm in the tech industry",
+      "id": "1"
+    }
+  ]
+}
