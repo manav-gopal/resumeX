@@ -9,7 +9,6 @@ import { useZoom } from 'src/stores/useZoom';
 import { useMediaQuery } from '@mui/material';
 
 // TODO: need to define types
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export let StateContext: Context<any> = createContext(null);
 
 export const ResumeLayout = () => {
@@ -35,7 +34,7 @@ export const ResumeLayout = () => {
         style={{ transform: `scale(${isMobile ? 0.4 : zoom}) translateX(${isMobile ? '-75%': '0%'})`, width: `${isMobile ? '250%': '100%'}` }}
         className="w-full origin-top transition-all duration-300 ease-linear print:!scale-100"
       >
-        <div className="sm:w-full sm:h-auto md:w-[210mm] md:h-[296mm] bg-white my-0 mx-auto sm:h-auto">
+        <div className="sm:w-full sm:h-auto md:w-[210mm] md:h-[296mm] bg-white my-0 mx-auto">
           <StateContext.Provider value={resumeData}>
             <ThemeProvider theme={selectedTheme}>{Template && <Template />}</ThemeProvider>
           </StateContext.Provider>
