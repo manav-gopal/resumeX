@@ -8,8 +8,11 @@
     "url": "www.harshsahu-resume.com",
     "summary": "I am a dedicated web developer with a strong expertise in frontend technologies and exposure to backend development. I design and develop web applications using cutting-edge technologies to ensure high-quality, efficient code delivery.",
     "location": {
-      "city": "Bilaspur",
-      "countryCode": "IN"
+      "countryCode": "IN",
+      "address": "",
+      "postalCode": "",
+      "city": "Bengaluru",
+      "region": ""
     },
     "relExp": "6 years",
     "totalExp": "8 years",
@@ -101,31 +104,37 @@
         "* Spearheading projects using React for improved user interactivity"
       ],
       "summary": "<ul><li> Utilizing extensive experience in frontend development to architect and build scalable project structures</li><li>Ensuring code quality by leading code reviews and proposing enhancements</li><li> Collaborating with designers to materialize design concepts into functional interfaces</li><li>Contributing to E-commerce advancements with Fastcommerce, a leading e-commerce platform</li></ul>",
-      "years": ""
+      "years": "",
+      "url": "",
+      "endDate": null
     },
     {
       "id": "2",
       "name": "Innovate Tech",
       "position": "Software Engineer",
       "startDate": "Jun 2022",
+      "isWorkingHere":false,
       "endDate": "Dec 2023",
       "highlights": [
         "* Developed web applications using Sharepoint, Drupal 8, and Episerver"
       ],
       "summary": "<ul><li>Developed web applications using Sharepoint, Drupal 8, and Episerver</li><li>Managed a team of 8 developers, providing technical support and clarifications</li><li>Reported project progress to Project Managers and IT Leads, ensuring alignment with requirements</li><li>Ensured compliance of code and features with project requirements</li></ul>",
-      "years": "1 years"
+      "years": "1 years",
+      "url": ""
     },
     {
       "id": "3",
       "name": "Digital Innovations",
       "position": "Trainee Developer",
       "startDate": "Aug 2020",
+      "isWorkingHere":false,
       "endDate": "May 2022",
       "highlights": [
         "* Worked on web application development for small companies"
       ],
       "summary": "<ul><li>Designed user-friendly interfaces for digital platforms of small companies</li><li>Developed Wordpress themes, plugins, and provided training</li><li>Managed Magento e-commerce platforms, customizing preexisting themes and integrating external services</li></ul>",
-      "years": "4 years"
+      "years": "4 years",
+      "url": ""
     }
   ],
 
@@ -137,6 +146,7 @@
       "studyType": "B.Tech",
       "area": "Computer Science",
       "startDate": "2020",
+      "isStudyingHere": false,
       "endDate": "2024",
       "score": "CGPA: 8.6",
       "courses": []
