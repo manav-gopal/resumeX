@@ -34,6 +34,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   // Fetch necessary data using database operations
   // Perform any data retrieval here...
+  
 
   return {
     props: {

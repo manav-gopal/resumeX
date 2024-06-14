@@ -1,4 +1,3 @@
-import { Request, Response } from 'express';
 import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcrypt';
 import User from 'src/models/user.model';
@@ -57,6 +56,18 @@ export async function login(req: NextApiRequest, res: NextApiResponse): Promise<
     res.status(500).json({ message: 'Login failed', error: error.message });
   }
 }
+export async function logout(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+  try {
+    // console.log("Logout api testing",req.body);
+    removeTokenCookie(res as any);
+
+    //proceed with successful logout
+    res.status(200).json({ message: 'Logout successful', status: 200 });
+    return;
+  } catch (error: any) {
+    res.status(500).json({ message: 'Logout failed', error: error.message });
+  }
+}
 
 // funtion For setting the Access token cookies
 function setTokenCookies(res: NextApiRequest, token: string): void {
@@ -65,9 +76,20 @@ function setTokenCookies(res: NextApiRequest, token: string): void {
       24 * 60 * 60
     }; Secure=${false}; path=/;`; // Valid for 24 Hours
     (res as any).setHeader('Set-Cookie', cookieValue);
+    
 
     return;
   } catch (error) {
     console.log('Error Setting the token cookies ', error);
+  }
+}
+
+// funtion For removing the Access token cookies
+function removeTokenCookie(res: NextApiResponse): void {
+  try {
+    const cookieValue = 'access_token=; HttpOnly; Max-Age=0; Secure=false; Path=/;';
+    res.setHeader('Set-Cookie', cookieValue);
+  } catch (error) {
+    console.error('Error removing token cookie:', error);
   }
 }

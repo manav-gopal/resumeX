@@ -1,14 +1,14 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useEffect} from 'react';
-import { NavBarActions, StyledButton } from './builder/nav-bar/atoms';
-import { BsGithub, BsPeople } from 'react-icons/bs';
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { NavBarActions, StyledButton } from "./builder/nav-bar/atoms";
+import { BsGithub, BsPeople } from "react-icons/bs";
 // eslint-disable-next-line import/no-unresolved
-import TransitionsModal from 'src/modules/login/LoginPopup';
-import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { setUserData } from 'src/stores/reducers/userDataReducer';
-import resumeIcon from 'public/resume.png';
+import TransitionsModal from "src/modules/login/LoginPopup";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserData } from "src/stores/reducers/userDataReducer";
+import resumeIcon from "public/resume.png";
 
 interface userData {
   name: string;
@@ -18,20 +18,27 @@ interface userData {
 const NavHome = () => {
   // To get the user data by authenticating it with token
   const dispatch = useDispatch();
-  const userData: any = useSelector((state:any) => state.userData);
+  const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('/api/auth/');
-        dispatch(setUserData(response.data.user));
-      } catch (error) {
+  const userData: any = useSelector((state: any) => state.userData);
+  const accessToken = userData.accessToken;
+  const fetchData = async (ignoreError: boolean) => {
+    try {
+      const response = await axios.get("/api/auth/");
+      dispatch(setUserData({ data: response.data.user }));
+      setUser(response.data.user);
+      // console.log("User Data Received");
+    } catch (error) {
+      if (!ignoreError) {
         console.error(error);
       }
-    };
-    fetchData();
-  }, [dispatch]);
-  console.log("succccc",userData);
+    }
+  };
+  useEffect(() => {
+    fetchData(true);
+    setUser(userData.data);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, accessToken]);
 
   return (
     <div>
@@ -55,11 +62,8 @@ const NavHome = () => {
               <StyledButton variant="text">About us</StyledButton>
             </Link>
             {/* For Login Popup  */}
-            <TransitionsModal userData={userData} />
-            <a
-              href={'#'}
-              rel="noopener noreferrer"
-            >
+            <TransitionsModal userData={user} />
+            <a href={"#"} rel="noopener noreferrer">
               <BsPeople className="h-6 w-6" fill="white" />
             </a>
           </NavBarActions>

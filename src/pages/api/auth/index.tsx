@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-// api/profile.ts
+// api/index.tsx
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getUserData } from 'src/controllers/user.controller';
 import { authenticateToken } from 'src/middleware/auth.middleware';

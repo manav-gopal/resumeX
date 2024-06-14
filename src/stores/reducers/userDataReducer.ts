@@ -1,15 +1,18 @@
 // userDataReducer.js
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = null; // Set initial state to null
+const initialState = { 
+  data: null,
+  accessToken: null // Add accessToken to the state
+}; 
 
 const userDataSlice = createSlice({
   name: 'userData',
   initialState,
   reducers: {
     setUserData: (state, action) => {
-      // Update userData based on action payload
-      return action.payload; // Simply return the payload, assuming it's an object or null
+      state.data = action.payload.data; // Assuming action.payload contains data
+      state.accessToken = action.payload.accessToken; // Set accessToken
     },
   },
 });

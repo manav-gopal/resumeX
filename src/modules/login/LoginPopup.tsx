@@ -4,9 +4,11 @@ import { useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { setUserData } from 'src/stores/reducers/userDataReducer';
 
 // from mui Material UI
 import { Menu, MenuItem, Button, Backdrop, Box, Modal, Fade } from '@mui/material';
+import { useDispatch } from 'react-redux';
 
 const style = {
   position: 'absolute',
@@ -34,6 +36,7 @@ export default function TransitionsModal(props: MyProps) {
   
 
   // Handle Login/SignUp Popups
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<Element | null>(null);
 
@@ -60,14 +63,20 @@ export default function TransitionsModal(props: MyProps) {
     e.preventDefault();
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
-    console.log('clicked login', email);
+    // console.log('clicked login', email);
 
     try {
       const response = await axios.post('/api/auth/login', { email, password });
-      console.log('is it working', response); // Handle successful login response
+      // console.log('is it working', response); // Handle successful login response
 
       // To Toastify the response :------------------------
       if (response.data.status === 200) {
+
+          // Extract access_token from the response
+          const token = response.data.token;
+          // Dispatch the action to store the user data and access token in Redux
+          dispatch(setUserData({ accessToken: token }));
+
         toast.success(`${response.data.message}`);
       } else if (response.data.status === 401) {
         toast.warning(`${response.data.message}`);
@@ -86,11 +95,11 @@ export default function TransitionsModal(props: MyProps) {
     const name = e.target.elements.name.value;
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
-    console.log('clicked signup', name, email, password);
+    // console.log('clicked signup', name, email, password);
 
     try {
       const response = await axios.post('/api/auth/signup', { name, email, password });
-      console.log(response); // Handle successful signup response
+      // console.log(response); // Handle successful signup response
 
       // To Toastify the response :------------------------
       toast.success(`${response.data.message}`);
@@ -100,6 +109,31 @@ export default function TransitionsModal(props: MyProps) {
       toast.error(`${error.response.data.message}`);
     }
   };
+
+  const handleLogoutSubmit = async (e:any) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/api/auth/logout');
+      // console.log('Log out', response); // Handle successful login response
+
+      // To Toastify the response :------------------------
+      if (response.data.status === 200) {
+          // Dispatch the action to store the user data and access token in Redux
+          dispatch(setUserData({ accessToken: null }));
+          // console.log("access token removed from the state");
+
+        toast.success(`${response.data.message}`);
+      } else if (response.data.status === 401) {
+        toast.warning(`${response.data.message}`);
+      } else if (response.data.status === 404) {
+        toast.info(`${response.data.message}`);
+      }
+      handleLogClose(); // To Close The Loginpopup box
+    } catch (error: any) {
+      console.error(error); // Handle error
+      toast.error(`${error.response.data.message}`);
+    }
+  }
 
   return (
     <div>
@@ -122,7 +156,7 @@ export default function TransitionsModal(props: MyProps) {
       >
         <MenuItem onClick={handleLogClose}>Profile</MenuItem>
         <MenuItem onClick={handleLogClose}>My account</MenuItem>
-        <MenuItem onClick={handleLogClose}>Logout</MenuItem>
+        <MenuItem onClick={handleLogoutSubmit}>Logout</MenuItem>
       </Menu>
       <ToastContainer
         position="top-right"
